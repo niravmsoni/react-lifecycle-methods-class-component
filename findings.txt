@@ -30,6 +30,9 @@
     Once information is set in state, then in the render method, we're checking whether this.state.instructor has data.
     Once populated, we'll render the Name, email and phone on the UI 
 
+    ComponentDidMount example - 
+    https://www.w3schools.com/react/showreact.asp?filename=demo2_react_lifecycle_componentdidmount
+
 90. componentDidUpdate()
 
     For now, added new HTML content to display student count.
