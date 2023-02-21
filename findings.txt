@@ -3,10 +3,33 @@
     Removed unnecessary items
     Copied existing index.html of older project(To import all bootstrap and other things configured as part of older project)
 
-88. 
+88. Created class component, created state and installed axios
     Creating a class component namely "CycloPediaClassPage".
     We'll be using random API to get instructor as well as students that we'll be using in the application.
     We'll be storing instructor(object), studentList(array), studentCount(int) and hideInstructor(bool) in state
 
     src > Utility > api.jsx - Copied it from existing project.
     Instal axios - npm install axios
+
+89. Main Lifecycle methods
+        componentDidMount(){}
+        componentDidUpdate(){}
+        componentWillUnmount(){}
+    
+    Added distinct console logs in each of these methods
+    Then, exported that component and consumed it in index.jsx
+
+    componentDidMount()
+    When doing npm start, we see the log "Component Did Mount" being printed in the console logs.
+    
+    TAKEAWAY - Whatever code we write inside componentDidMount, it will be immediately invoked as soon as the component is mounted.
+    Load data in initial state or from a remote endpoint - Use componentDidMount()
+    So, now, called the Random API written in api.jsx in componentDidMount().
+    Able to see data being logged to console. Now, we'll extract information from response and then set it in the state
+
+    Once information is set in state, then in the render method, we're checking whether this.state.instructor has data.
+    Once populated, we'll render the Name, email and phone on the UI 
+
+    
+
+    
