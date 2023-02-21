@@ -10,6 +10,8 @@ class CycloPediaClassPage extends React.Component{
             studentList: [],
             studentCount: 0,
             hideInstructor: false,
+            inputName: "",
+            inputFeedback: ""
         };
     }
 
@@ -68,6 +70,24 @@ class CycloPediaClassPage extends React.Component{
                 Phone: {this.state.instructor.phone}
             </div>)
             }
+
+            <div className="p-3">
+                <span className="h4 text-success">Feedback</span>
+                <br/>
+                <input 
+                type="text"
+                placeholder="Name..." 
+                value={this.state.inputName}
+                onChange={(e)=>{this.setState({inputName: e.target.value})}}></input>
+                Value: {this.state.inputName}
+                <br/>
+                <textarea
+                placeholder="Feedback..."
+                value={this.state.inputFeedback}
+                onChange={(e) => {this.setState({inputFeedback: e.target.value})}}
+                ></textarea>
+                FeedbackValue: {this.state.inputFeedback}
+            </div>
 
             <div className="p-3">
                 <span className="h4 text-success">Students</span><br/>

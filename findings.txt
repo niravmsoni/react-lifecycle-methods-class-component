@@ -53,7 +53,23 @@
 
     render() -> This method will always be calledS
 
+91. Controlled Component
+    - Let's say we have a textbox and we want to save the value in the STATE AS SOON AS THE USER TYPES THEM.
+    That's known as controlled component
+    Added 2 items to the HTML under Feedback section namely "Name" & "Feedback"
+    Added 2 new properties under state object namely inputName and inputFeedback
+    Before:
+    <input 
+                type="text"
+                placeholder="Name..."></input>
 
-    
+    After:
+    <input 
+                type="text"
+                placeholder="Name..." 
+                value={this.state.inputName}
+                onChange={(e)=>{this.setState({inputName: e.target.value})}}></input>
 
-    
+    So, now, we bound value with state property. And wrote an onChange event which will update state value DYNAMICALLY as we type it.
+    If we do not put an onChange, it will throw console error and field will change to readonly
+    This is known as controlled component.
