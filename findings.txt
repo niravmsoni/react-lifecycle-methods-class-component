@@ -11,7 +11,7 @@
     src > Utility > api.jsx - Copied it from existing project.
     Instal axios - npm install axios
 
-89. Main Lifecycle methods
+89. Main Lifecycle methods and componentDidMount in DETAIL
         componentDidMount(){}
         componentDidUpdate(){}
         componentWillUnmount(){}
@@ -29,6 +29,27 @@
 
     Once information is set in state, then in the render method, we're checking whether this.state.instructor has data.
     Once populated, we'll render the Name, email and phone on the UI 
+
+90. componentDidUpdate()
+
+    For now, added new HTML content to display student count.
+    Used the studentCount value from the state. Added 2 new buttons > Add Student and Remove All students.
+    Upon click, added 2 new handlers that modified the "studentCount" state value to current + 1 and 0 respectively
+
+    Upon refreshing the page, we see do see 2 things in the logs:
+    Render component
+    Component Did Update -> Why was this invoked?
+
+    Since we're fetching the instructor details on the load, once we have information, we're UPDATING the component.
+    If we comment out the code to populate state with random API response, we are not modifying the component anymore(Since this.state.instructor will never have value).
+    Due to which the Component Did update does not get printed in the console
+
+    DIFFERENCE BETWEEN DidMount() and DidUpdate()
+    DidMount() -> Executes only once(For the very first time the component is rendered)
+    DidUpdate() -> Executes everytime the component is re-rendered/updated(For ex: Add/remove button onClick event resulting in changes in HTML dom)
+
+    render() -> This method will always be calledS
+
 
     
 
