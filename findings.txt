@@ -2,3 +2,11 @@
     Used npx-create-react-app
     Removed unnecessary items
     Copied existing index.html of older project(To import all bootstrap and other things configured as part of older project)
+
+88. 
+    Creating a class component namely "CycloPediaClassPage".
+    We'll be using random API to get instructor as well as students that we'll be using in the application.
+    We'll be storing instructor(object), studentList(array), studentCount(int) and hideInstructor(bool) in state
+
+    src > Utility > api.jsx - Copied it from existing project.
+    Instal axios - npm install axios
