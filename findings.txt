@@ -1,0 +1,4 @@
+87. Created a project 
+    Used npx-create-react-app
+    Removed unnecessary items
+    Copied existing index.html of older project(To import all bootstrap and other things configured as part of older project)
