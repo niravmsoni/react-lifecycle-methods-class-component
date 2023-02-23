@@ -73,3 +73,17 @@
     So, now, we bound value with state property. And wrote an onChange event which will update state value DYNAMICALLY as we type it.
     If we do not put an onChange, it will throw console error and field will change to readonly
     This is known as controlled component.
+
+92. Local storage
+    Planning to save the state to local storage
+    Whatever feedback user enters(inputName and inputFeedback set as controlled components in previous step)
+    we will save it to local storage.
+    Inspect element > Application > Local Storage
+
+    componentDidUpdate() -> Since this will trigger as soon as the component is updated, in our case, it will trigger when we set the instructor name and its details to HTML.
+    We're going to do JSON.stringify & set the value in localStorage(Browser)
+    We need to set key and value(JSON.stringify the value & then store it)
+
+    After that, in componentDidMount(), we will check if the data exists in local storage, if so, pull it directly, if not, make call to RandomAPI, get and set the data
+    PLUS, since we have controlled component, whatever we type dynamically, will be set to browsers local storage AS WE TYPE(Since its bound to OnChange)
+    
