@@ -37,10 +37,33 @@ class CycloPediaClassPage extends React.Component{
         }
     }
 
-    componentDidUpdate(){
+    componentDidUpdate = async(previousState) => {
         console.log('Component Did Update');
         localStorage.setItem("cyclopediaState", JSON.stringify(this.state));
-    }
+        console.log('old state - '+ previousState.studentCount);
+        console.log('new state - '+ this.state.studentCount);
+
+        if (previousState.studentCount < this.state.studentCount){
+            const response = await getRandomUser();
+            this.setState((prevState) =>{
+                return{
+                    studentList: [
+                        ...prevState.studentList,
+                        {
+                            name: response.data.first_name + " " + response.data.last_name,
+                        },
+                    ],
+                };
+            });
+        }
+        else if(previousState.studentCount > this.state.studentCount){
+            this.setState((prevState) =>{
+                return {
+                    studentList: [],
+                };
+            });
+        };
+    };
 
     componentWillUnmount(){
         console.log('Component Will Unmount');
@@ -77,7 +100,7 @@ class CycloPediaClassPage extends React.Component{
             <span className="h4 text-success">Instructor </span>
             <i className={`bi ${this.state.hideInstructor ? "bi-toggle-off":"bi-toggle-on"} btn btn-success btn-sm`}
             onClick={this.handleToggleInstructor}></i>
-            {!this.state.hideInstructor ?
+            {!this.state.hideInstructor && this.state.instructor ?
             (<Instructor instructor={this.state.instructor}></Instructor>)
             : null
             }
@@ -107,6 +130,12 @@ class CycloPediaClassPage extends React.Component{
                 <button className="btn btn-success btn-sm" onClick={this.handleAddStudent}>Add Student</button>
                 &nbsp;
                 <button className="btn btn-danger btn-sm"  onClick={this.handleRemoveAllStudents}>Remove All Students</button>
+
+                {this.state.studentList.map((student, index) => {
+                    return(
+                        <div className="text-white" key={index}> - {student.name}</div>
+                    )
+                })}
             </div>
         </div>)
     }

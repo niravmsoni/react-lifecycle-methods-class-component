@@ -102,3 +102,16 @@
     When we hide the instructor section, we see UnMount - Instructor being triggered.
     TAKEAWAY - When a compoent is removed, we see componentWillUnmount() being triggered,
     So, its a great place to cleanup functionality(Event Listener etc.)
+
+95.
+    Add Student >
+        Upon click of Add student, call random API & add it(Just name) to studentList array in state.
+
+        We're going to use componentDidUpdate() to call random API to get student.
+        WE're checking previousState.studentCount and current state's studentCount.
+        IF new value > old value, we call random API and set the name in state.studentList.
+        If its less, we empty the state.
+
+        Also, if we delete the localStorage and reload page, while loading Instructor.jsx, it will throw error.
+        To correct it, added a check in CycloPediaClassPage's place where we're rendering Instructor component to only render if the value is populated.
+        

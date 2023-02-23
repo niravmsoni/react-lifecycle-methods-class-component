@@ -20,7 +20,7 @@ constructor(props){
     render(){
         console.log("Render - Instructor");
         return(
-        <div className="">
+        <div>
             Name: {this.props.instructor.name}
             <br />
             Email: {this.props.instructor.email}
