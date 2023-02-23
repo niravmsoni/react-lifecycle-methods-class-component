@@ -86,4 +86,10 @@
 
     After that, in componentDidMount(), we will check if the data exists in local storage, if so, pull it directly, if not, make call to RandomAPI, get and set the data
     PLUS, since we have controlled component, whatever we type dynamically, will be set to browsers local storage AS WE TYPE(Since its bound to OnChange)
-    
+
+93. Moving out instructor to separate component
+    Moved instructor related code in a separate child class component and passed state.instructor as prop.
+    In instructor.jsx, changed code to read from prop instead of state.
+
+    Also, added 3 methods - componentDidMount(), componentDidUpdate() and componentWillUnmount()
+    First, parent component method are being called and then the child ones
