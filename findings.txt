@@ -93,3 +93,12 @@
 
     Also, added 3 methods - componentDidMount(), componentDidUpdate() and componentWillUnmount()
     First, parent component method are being called and then the child ones
+
+94. Hide instructor details on Toggle.
+    Moved toggle button click implementation to CycloPediaClassPage.jsx
+    Added a handler there and toggled the state hideInstructor value.
+    Also, updated css to change icon toggle-on to toggle-off based on state value.
+
+    When we hide the instructor section, we see UnMount - Instructor being triggered.
+    TAKEAWAY - When a compoent is removed, we see componentWillUnmount() being triggered,
+    So, its a great place to cleanup functionality(Event Listener etc.)
