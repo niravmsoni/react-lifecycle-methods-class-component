@@ -115,3 +115,6 @@
         Also, if we delete the localStorage and reload page, while loading Instructor.jsx, it will throw error.
         To correct it, added a check in CycloPediaClassPage's place where we're rendering Instructor component to only render if the value is populated.
         
+----------
+107.
+    Re-using same project for implementing the equivalent of componentDidMount, componentDidUpdate and componentWillUnmount but using useEffect (i.e. Equivalent of functional component)
