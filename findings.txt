@@ -122,4 +122,5 @@
     In index.jsx, made sure to load the CycloPediaFuncPage component.
 
 108.
-    Started converting class to functional
+    Started converting class to functional.
+    Revisit this
