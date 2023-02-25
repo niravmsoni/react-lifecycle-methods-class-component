@@ -118,3 +118,8 @@
 ----------
 107.
     Re-using same project for implementing the equivalent of componentDidMount, componentDidUpdate and componentWillUnmount but using useEffect (i.e. Equivalent of functional component)
+    Copied CycloPediaClassPage and Instructor and renamed the new ones to have the func keyword in them.
+    In index.jsx, made sure to load the CycloPediaFuncPage component.
+
+108.
+    Started converting class to functional
