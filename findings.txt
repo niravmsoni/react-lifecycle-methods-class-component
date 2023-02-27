@@ -196,3 +196,6 @@
     }, []);
 
     For using async/await with useEffect, need to create a new async function and then call it from the end of the method
+
+111.
+    Works fine. Upon toggling the implementation, we do see Instructor - Unmount being printed on the logs
