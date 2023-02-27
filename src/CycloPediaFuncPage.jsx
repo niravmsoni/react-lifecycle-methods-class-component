@@ -22,8 +22,23 @@ const CycloPediaFuncPage = () => {
     });
 
     useEffect(() => {
-      console.log("This will be called on Initial/First Render/Mount");
       //ComponentDidMount() equivalent
+      console.log("This will be called on Initial/First Render/Mount");
+
+      const getUser = async() =>{
+        const response = await getRandomUser();
+        setState((prevState) => {
+            return {
+              ...prevState,
+                instructor: {
+                    name: response.data.first_name + " " + response.data.last_name,
+                    email: response.data.email,
+                    phone: response.data.phone_number,
+                },
+            };
+        });
+      };
+      getUser();
     }, []);
     
     useEffect(() => {

@@ -169,3 +169,30 @@
     ORDER OF USEEFFECTS MATTER.
 
     Changing instructorFunc to be functional component to test unMount.
+
+    Still instructor is not loading so, for that adding Random API call in next video.
+
+110.
+    Copied random API call.
+    Added below implementation.
+    useEffect(() => {
+      //ComponentDidMount() equivalent
+      console.log("This will be called on Initial/First Render/Mount");
+
+      const getUser = async() =>{
+        const response = await getRandomUser();
+        setState((prevState) => {
+            return {
+              ...prevState,
+                instructor: {
+                    name: response.data.first_name + " " + response.data.last_name,
+                    email: response.data.email,
+                    phone: response.data.phone_number,
+                },
+            };
+        });
+      };
+      getUser();
+    }, []);
+
+    For using async/await with useEffect, need to create a new async function and then call it from the end of the method
