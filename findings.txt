@@ -205,3 +205,9 @@
     For that, we need to modify the useEffect which we wrote to get the Random User.
     Instead of empty array, specified to call the useEffect when [state.hideInstructor] is updated.
     Also, added an if condition inside method to call getUser() only if hideInstructor is true.
+
+114.
+    Get Random student name when Add Student is clicked.
+    For that, copy existing useEffect() & make sure it gets called when state.studentCount is updated.
+    studentCount - Rewatch
+    
