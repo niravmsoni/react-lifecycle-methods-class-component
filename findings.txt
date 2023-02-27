@@ -123,4 +123,19 @@
 
 108.
     Started converting class to functional.
-    Revisit this
+    Removed extends implementation and converted it an arrow function
+    Then, existing state is broken down to multiple states.
+    So, 3 states now:
+        state,
+        inputName
+        inputFeedback
+
+    Plus, since we need to migrate from setState to useState, for that, we need to SPREAD existing state and then apply update to the state property we're wanting to update
+    Also, removed this keyword from entire component.
+
+    Also, with inputName and inputFeedback, set the state binding correctly. For ex:
+    Earlier with OnChange, was bound with setState but since we split the state, need to change the method there.
+    Compare CycloPediaFuncPage and CycloPediaClass page for more details
+
+
+    

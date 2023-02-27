@@ -1,5 +1,6 @@
 import React from "react";
 import Instructor from "./Instructor";
+import { useState } from "react";
 
 import { getRandomUser } from "./Utility/api";
 
@@ -81,7 +82,7 @@ const CycloPediaFuncPage = () => {
   //     console.log('Component Will Unmount');
   // }
 
-  handleAddStudent = () => {
+  const handleAddStudent = () => {
     setState((prevState) => {
       return {
         ...prevState,
@@ -90,8 +91,8 @@ const CycloPediaFuncPage = () => {
     });
   };
 
-  handleRemoveAllStudents = () => {
-    setState(() => {
+  const handleRemoveAllStudents = () => {
+    setState((prevState) => {
       return {
         ...prevState,
         studentCount: 0,
@@ -99,7 +100,7 @@ const CycloPediaFuncPage = () => {
     });
   };
 
-  handleToggleInstructor = () => {
+  const handleToggleInstructor = () => {
     setState((prevState) => {
       return {
         ...prevState,
@@ -129,21 +130,21 @@ const CycloPediaFuncPage = () => {
         <input
           type="text"
           placeholder="Name..."
-          value={state.inputName}
+          value={inputName}
           onChange={(e) => {
-            setState({ inputName: e.target.value });
+            setInputName(e.target.value);
           }}
         ></input>
-        Value: {state.inputName}
+        Value: {inputName}
         <br />
         <textarea
           placeholder="Feedback..."
-          value={state.inputFeedback}
+          value={inputFeedback}
           onChange={(e) => {
-            setState({ inputFeedback: e.target.value });
+            setinputFeedback(e.target.value );
           }}
         ></textarea>
-        FeedbackValue: {state.inputFeedback}
+        FeedbackValue: {inputFeedback}
       </div>
 
       <div className="p-3">
