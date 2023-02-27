@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Instructor from "./Instructor";
 import { useState } from "react";
 
@@ -16,6 +16,29 @@ const CycloPediaFuncPage = () => {
 
     const [inputName, setInputName] = useState(() => { return ""});
     const [inputFeedback, setinputFeedback] = useState(() => { return ""});
+
+    useEffect(() => {
+      console.log("This will be called on EVERY Render");
+    });
+
+    useEffect(() => {
+      console.log("This will be called on Initial/First Render/Mount");
+      //ComponentDidMount() equivalent
+    }, []);
+    
+    useEffect(() => {
+      console.log("This will be called on whenever value of items specified in array changes");
+      //More granular version of ComponentDidUpdate().
+    }, [inputFeedback, inputName]);
+
+    useEffect(() => {
+      console.log("This will be called on Initial/First Render/Mount");
+      return() => {
+        //ComponentWillUnmount() equivalent
+        console.log("This will be called on when component will be UNMOUNTED");
+      }
+    }, []);
+    
 
   // constructor(props){
   //     super(props);

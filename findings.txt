@@ -137,5 +137,35 @@
     Earlier with OnChange, was bound with setState but since we split the state, need to change the method there.
     Compare CycloPediaFuncPage and CycloPediaClass page for more details
 
+109.
+    Right now, we do not have instructor details being loaded in functional component.
+    For doing that, we need a method like componentDidMount's equivalent.
+    So, implementing that now.
 
+    useEffect(() => {
+      console.log("This will be called on EVERY Render");
+    });
+
+    useEffect(() => {
+      console.log("This will be called on Initial/First Render/Mount");
+      //ComponentDidMount() equivalent
+    }, []);
     
+    useEffect(() => {
+      console.log("This will be called on whenever value of items specified in array changes");
+      //More granular version of ComponentDidUpdate().
+      //We can have more than 1 items in array and this didUpdate() equivalent will trigger for each of the state properties specified here
+    }, [inputFeedBack, inputName]);
+
+    useEffect(() => {
+      console.log("This will be called on Initial/First Render/Mount");
+      return() => {
+        //ComponentWillUnmount() equivalent
+        console.log("This will be called on when component will be UNMOUNTED");
+      }
+    }, []);
+
+    WE CAN HAVE MULTIPLE useEffect in a single functional component.
+    ORDER OF USEEFFECTS MATTER.
+
+    Changing instructorFunc to be functional component to test unMount.
