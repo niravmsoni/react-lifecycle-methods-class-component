@@ -38,8 +38,10 @@ const CycloPediaFuncPage = () => {
             };
         });
       };
-      getUser();
-    }, []);
+      if(!state.hideInstructor){
+        getUser();
+      }
+    }, [state.hideInstructor]);
     
     useEffect(() => {
       console.log("This will be called on whenever value of items specified in array changes");

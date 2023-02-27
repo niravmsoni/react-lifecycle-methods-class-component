@@ -199,3 +199,9 @@
 
 111.
     Works fine. Upon toggling the implementation, we do see Instructor - Unmount being printed on the logs
+
+112/113.
+    Assignment - Load instructor when show/hide of instructor is clicked.
+    For that, we need to modify the useEffect which we wrote to get the Random User.
+    Instead of empty array, specified to call the useEffect when [state.hideInstructor] is updated.
+    Also, added an if condition inside method to call getUser() only if hideInstructor is true.
